@@ -46,10 +46,17 @@ def parse_resistor(code):
     length = len(str(value))
     if length > 3 and length < 7:
         val = value / 1000
+        strung = str(val)
+        if strung.endswith(".0"):
+            val = strung[:-2]
         print("{}K".format(val))
     elif length > 6:
         val = value / 1000000
-        print("{}M".format(val))    
+        strung = str(val)
+        if strung.endswith(".0"):
+            val = strung[:-2]
+            
+        print("{}M".format(val))
     else:
         print("{}".format(value, ','))
     worded_value = num2words(value)
