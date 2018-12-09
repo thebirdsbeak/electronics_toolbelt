@@ -47,7 +47,7 @@ def parse_resistor(code):
     if length > 3 and length < 7:
         val = value / 1000
         print("{}K".format(val))
-    elif length > 6 and length < 10:
+    elif length > 6:
         val = value / 1000000
         print("{}M".format(val))    
     else:
